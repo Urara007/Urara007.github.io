@@ -98,11 +98,16 @@
             100% { transform: translate3d(-50%, 0, 0); }
         }
 
-        /* 3. Global Content Layoutt */
+               /* 3. Global Content Layout */
         .content-container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 2rem 6rem 2rem;
+            width: 100%;
+            display: block;
+            box-sizing: border-box; /* Prevents text overflow */
+        }
+
         }
 
         section {
