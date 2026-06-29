@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Creative Portfolio</title>
+    <!-- FontAwesome for clean iconography -->
+    <script src="https://cloudflare.com"></script>
+    <style>
+        :root {
+            --bg-color: #0b0b0c;
+            --card-bg: #131316;
+            --text-main: #ffffff;
+            --text-muted: #8e8e93;
+            --accent: #6366f1; /* Premium indigo theme */
+            --border: #1f1f23;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 1. Hero Identity Header */
+        header {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem 2rem;
+        }
+
+        header h1 {
+            font-size: 4.5rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-row a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+
+        .social-row a:hover {
+            color: var(--accent);
+        }
+
+        /* 2. Side-Scrolling Text Banner */
+        .ticker-wrap {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            padding: 0.8rem 0;
+            margin-bottom: 5rem;
+        }
+
+        .ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+        }
+
+        .ticker span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0 2rem;
+            color: var(--text-muted);
+        }
+
+        @keyframes marquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* 3. Global Content Layout */
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        .section-tag {
+            font-family: monospace;
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        section h2 em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent);
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+
+        /* 4. Tools & Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* 5. Clean Structured Work Cards */
+        .work-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 2rem;
+        }
+
+        .work-meta {
+            border-right: 1px solid var(--border);
+            padding-right: 1rem;
+        }
+
+        .company-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .work-duration {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .work-role {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .work-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag-badge {
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            color: var(--text-muted);
+        }
+
+        /* 6. Creative Project Callouts */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .portfolio-card i {
+            align-self: flex-end;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* 7. Contact Section Box */
+        .contact-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            background: var(--text-main);
+            color: var(--bg-color);
+            padding: 0.85rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 3rem; }
+            .work-card { grid-template-columns: 1fr; gap: 1rem; }
+            .work-meta { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 1rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .contact-box { flex-direction: column; gap: 1.5rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Your Name</h1>
+        <div class="tagline">Marketing · Strategy · Storytelling</div>
+        <div class="social-row">
+            <a href="mailto:yourname@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </header>
+
+    <!-- Endless Text Ticker Banner -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span>Brand Strategy ✦ Content Creation ✦ Digital Campaigns ✦ Data Analytics ✦ Community Growth ✦ Brand Strategy ✦ Content Creation ✦ Digital Campaigns ✦ Data Analytics ✦ Community Growth ✦</span>
+        </div>
+    </div>
+
+    <!-- Main Blocks -->
+    <div class="content-container">
+        
+        <!-- About Block -->
+        <section id="about">
+            <span class="section-tag">01 — About Me</span>
+            <h2>I build <em>stories</em> that move people forward.</h2>
+            <p class="about-text">
+                I work across digital layout setups, social positioning strategies, and media campaign planning. I focus on developing unique engagement funnels that clear confusion and elevate native brand reach.
+            </p>
+        </section>
+
+        <!-- Tools & Skills Block -->
+        <section id="skills">
+            <span class="section-tag">02 — Tools & Skills</span>
+            <h2>Creative Tool Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">Pr</div>
+                    <div>
